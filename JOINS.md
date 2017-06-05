@@ -1,5 +1,6 @@
 ```sql
--- CROSS means decart product (each tuple from the left table will be extended with data from the second table)
+-- CROSS means decart product (each tuple from the left table will be extended with data
+-- from the second table)
 SELECT * FROM emp 
 CROSS JOIN dept;
 
@@ -9,4 +10,13 @@ CROSS JOIN empty_table;
 
 -- this is a shorter way to do a CROSS JOIN 
 SELECT * FROM emp, dept;
+```
+
+![inner join](https://www.w3schools.com/sql/img_innerjoin.gif)
+```sql
+-- INNER JOIN: all records where deptno is NULL or does not have respective record 
+-- in the coresponding table will be omitted
+SELECT * FROM emp 
+INNER JOIN dept ON 1=1
+    AND emp.`deptno` = dept.`deptno`;
 ```
