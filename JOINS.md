@@ -19,4 +19,8 @@ SELECT * FROM emp, dept;
 SELECT * FROM emp 
 INNER JOIN dept ON 1=1
     AND emp.`deptno` = dept.`deptno`;
+    
+-- shorter way to do an INNER JOIN
+SELECT * FROM emp, dept 
+WHERE emp.`deptno` = dept.`deptno`
 ```
