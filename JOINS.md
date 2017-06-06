@@ -29,4 +29,8 @@ WHERE emp.`deptno` = dept.`deptno`
 -- column in hidden ON statement)
 SELECT * FROM emp 
 NATURAL JOIN dept
+
+-- another way to write the queries above
+SELECT * FROM emp 
+JOIN dept USING (`deptno`)
 ```
