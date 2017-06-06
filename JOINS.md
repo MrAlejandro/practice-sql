@@ -59,9 +59,10 @@ FULL [OUTER] JOIN dept ON 1=1
     AND emp.`deptno` = dept.`deptno`;
 
 -- FULL JOIN emulation for MySQL
- SELECT * FROM emp 
- LEFT JOIN dept ON emp.`deptno` = dept.`deptno` 
- UNION 
- SELECT * FROM emp 
- RIGHT JOIN dept ON emp.`deptno` = dept.`deptno`
+SELECT * FROM emp
+LEFT JOIN dept ON emp.`deptno` = dept.`deptno`
+UNION ALL
+SELECT * FROM emp
+RIGHT JOIN dept ON emp.`deptno` = dept.`deptno`
+WHERE emp.`deptno` IS NULL;
 ```
