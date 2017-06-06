@@ -25,7 +25,8 @@ SELECT * FROM emp, dept
 WHERE emp.`deptno` = dept.`deptno`
 
 -- another way to write the previous two (joins by the columns with equal names
--- in both tables)
+-- in both tables) - NOT RECOMMENDED TO USE (because it may use more than one 
+-- column in hidden ON statement)
 SELECT * FROM emp 
 NATURAL JOIN dept
 ```
