@@ -34,3 +34,4 @@ NATURAL JOIN dept
 SELECT * FROM emp 
 JOIN dept USING (`deptno`)
 ```
+![left outer join](http://stevestedman.com/wp-content/uploads/LeftOuterJoinVenn.png)
