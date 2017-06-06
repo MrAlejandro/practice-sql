@@ -50,3 +50,18 @@ SELECT * FROM emp
 RIGHT [OUTER] JOIN dept ON 1=1
     AND emp.`deptno` = dept.`deptno`;
 ```
+
+![full outer join](https://www.w3schools.com/sql/img_fulljoin.gif)
+```sql
+-- note that OUTER can be omitted, MySQL does not have FULL JOIN
+SELECT * FROM emp 
+FULL [OUTER] JOIN dept ON 1=1 
+    AND emp.`deptno` = dept.`deptno`;
+
+-- FULL JOIN emulation for MySQL
+ SELECT * FROM emp 
+ LEFT JOIN dept ON emp.`deptno` = dept.`deptno` 
+ UNION 
+ SELECT * FROM emp 
+ RIGHT JOIN dept ON emp.`deptno` = dept.`deptno`
+```
