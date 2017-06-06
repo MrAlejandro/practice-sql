@@ -23,4 +23,8 @@ INNER JOIN dept ON 1=1
 -- shorter way to do an INNER JOIN
 SELECT * FROM emp, dept 
 WHERE emp.`deptno` = dept.`deptno`
+
+-- another way to write the previous two
+SELECT * FROM emp 
+NATURAL JOIN dept
 ```
