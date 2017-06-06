@@ -38,5 +38,6 @@ JOIN dept USING (`deptno`)
 ```sql
 -- note that OUTER can be omitted
 SELECT * FROM emp 
-LEFT [OUTER] JOIN dept ON emp.`deptno` = dept.`deptno`;
+LEFT [OUTER] JOIN dept ON 1=1
+    AND emp.`deptno` = dept.`deptno`;
 ```
