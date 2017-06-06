@@ -35,3 +35,8 @@ SELECT * FROM emp
 JOIN dept USING (`deptno`)
 ```
 ![left outer join](http://stevestedman.com/wp-content/uploads/LeftOuterJoinVenn.png)
+```sql
+-- note that OUTER can be omitted
+SELECT * FROM emp 
+LEFT [OUTER] JOIN dept ON emp.`deptno` = dept.`deptno`;
+```
