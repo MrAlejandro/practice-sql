@@ -24,7 +24,8 @@ INNER JOIN dept ON 1=1
 SELECT * FROM emp, dept 
 WHERE emp.`deptno` = dept.`deptno`
 
--- another way to write the previous two
+-- another way to write the previous two (joins by the columns with equal names
+-- in both table)
 SELECT * FROM emp 
 NATURAL JOIN dept
 ```
