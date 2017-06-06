@@ -41,3 +41,5 @@ SELECT * FROM emp
 LEFT [OUTER] JOIN dept ON 1=1
     AND emp.`deptno` = dept.`deptno`;
 ```
+![left outer join](https://www.w3schools.com/sql/img_leftjoin.gif)
+![right outer join](https://www.w3schools.com/sql/img_rightjoin.gif)
