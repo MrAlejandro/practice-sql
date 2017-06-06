@@ -34,12 +34,19 @@ NATURAL JOIN dept
 SELECT * FROM emp 
 JOIN dept USING (`deptno`)
 ```
-![left outer join](http://stevestedman.com/wp-content/uploads/LeftOuterJoinVenn.png)
+
+![left outer join](https://www.w3schools.com/sql/img_leftjoin.gif)
 ```sql
 -- note that OUTER can be omitted
 SELECT * FROM emp 
 LEFT [OUTER] JOIN dept ON 1=1
     AND emp.`deptno` = dept.`deptno`;
 ```
-![left outer join](https://www.w3schools.com/sql/img_leftjoin.gif)
+
 ![right outer join](https://www.w3schools.com/sql/img_rightjoin.gif)
+```sql
+-- note that OUTER can be omitted
+SELECT * FROM emp 
+RIGHT [OUTER] JOIN dept ON 1=1
+    AND emp.`deptno` = dept.`deptno`;
+```
