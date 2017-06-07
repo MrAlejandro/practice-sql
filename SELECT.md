@@ -6,4 +6,7 @@ SELECT AVG(`priority_sum`) FROM (
     FROM task
     GROUP BY `status`
 ) AS subquery
+
+-- FAKE TABLE
+SELECT 1 AS n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5;
 ```
