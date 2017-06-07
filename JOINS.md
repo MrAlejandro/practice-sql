@@ -66,3 +66,28 @@ SELECT * FROM emp
 RIGHT JOIN dept ON emp.`deptno` = dept.`deptno`
 WHERE emp.`deptno` IS NULL;
 ```
+
+```sql
+-- SUBJUERIES VS JOIN with the same results
+
+-- this one is the slowes
+SELECT emp.* 
+FROM emp WHERE EXISTS (
+	SELECT * 
+    FROM dept WHERE emp.deptno = dept.deptno
+)
+ORDER BY empno;
+
+-- this one is faster than the previous one
+SELECT emp.* 
+FROM emp WHERE emp.deptno IN (
+	SELECT dept.deptno FROM dept
+)
+ORDER BY empno;
+
+-- this one is the fastest (for my specific conditions)
+SELECT emp.* 
+FROM emp 
+JOIN dept ON emp.deptno = dept.deptno
+ORDER BY empno;
+```
