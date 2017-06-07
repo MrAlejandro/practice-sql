@@ -70,7 +70,8 @@ WHERE emp.`deptno` IS NULL;
 ```sql
 -- SUBJUERIES VS JOIN with the same results
 
--- this one is the slowes
+-- this one (correlated query - where the data from the outer query is used
+-- inside the subquery), is the slowest, and should be avoided
 SELECT emp.* 
 FROM emp WHERE EXISTS (
 	SELECT * 
@@ -78,14 +79,14 @@ FROM emp WHERE EXISTS (
 )
 ORDER BY empno;
 
--- this one is faster than the previous one
+-- this one (non-correlated query) is faster than the previous one
 SELECT emp.* 
 FROM emp WHERE emp.deptno IN (
 	SELECT dept.deptno FROM dept
 )
 ORDER BY empno;
 
--- this one is the fastest (for my specific conditions)
+-- JOIN is the fastest and preferred out of these three queries
 SELECT emp.* 
 FROM emp 
 JOIN dept ON emp.deptno = dept.deptno
